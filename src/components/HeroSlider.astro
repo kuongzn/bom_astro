@@ -1,14 +1,14 @@
 ---
 import heroData from '../../content/hero-slides.json';
 const slides = heroData.slides || [];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section id="home" class="section-block hero-slider" data-slides={JSON.stringify(slides)}>
+<section id="home" class="section-block hero-slider" data-slides={JSON.stringify(slides)} data-base={base}>
     <div class="slider-container">
-        <!-- 첫 번째 슬라이드는 SSR로 즉시 렌더링 (SEO 및 초기 로딩 최적화) -->
         {slides.length > 0 && (
             <div class="slide active">
-                <img src={slides[0].img} alt={slides[0].title} />
+                <img src={`${base}${slides[0].img}`} alt={slides[0].title} />
             </div>
         )}
     </div>
@@ -28,10 +28,10 @@ const slides = heroData.slides || [];
 </section>
 
 <script>
-    // 클라이언트 측에서 5초마다 슬라이드 순환 및 텍스트 변경
     const sliderSection = document.querySelector('.hero-slider');
     if (sliderSection) {
         const slides = JSON.parse(sliderSection.getAttribute('data-slides') || '[]');
+        const base = sliderSection.getAttribute('data-base') || '';
         const sliderContainer = sliderSection.querySelector('.slider-container');
         const artistEl = sliderSection.querySelector('.caption-artist');
         const titleEl = sliderSection.querySelector('.caption-title');
@@ -55,7 +55,7 @@ const slides = heroData.slides || [];
 
                 sliderContainer.innerHTML = `
                     <div class="slide active">
-                        <img src="${slideData.img}" alt="${slideData.title}" />
+                        <img src="${base}${slideData.img}" alt="${slideData.title}" />
                     </div>
                 `;
 

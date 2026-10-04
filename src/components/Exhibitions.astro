@@ -1,6 +1,7 @@
 ---
 import exhibitionsData from '../../content/exhibitions.json';
 const exhibitions = exhibitionsData.items || [];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="exhibitions" class="section-block">
@@ -17,7 +18,7 @@ const exhibitions = exhibitionsData.items || [];
             <div class="exhibition-track">
                 {exhibitions.map((item) => (
                     <div class="exhibition-card">
-                        <img src={item.image} alt={item.title} />
+                        <img src={`${base}${item.image}`} alt={item.title} />
                         <div class="exhibition-info">
                             <span>{item.badge}</span>
                             <h3>{item.title}</h3>
@@ -33,7 +34,6 @@ const exhibitions = exhibitionsData.items || [];
 </section>
 
 <script>
-    // 캐러셀 좌우 스크롤 버튼 제어
     const carouselWrapper = document.querySelector('.exhibition-carousel-wrapper');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');

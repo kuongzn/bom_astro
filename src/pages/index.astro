@@ -3,18 +3,16 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import HeroSlider from '../components/HeroSlider.astro';
 import Exhibitions from '../components/Exhibitions.astro';
----
-// ( Workshops, About, Archives 등 나머지 섹션도 컴포넌트로 분리 가능 )
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Rainbow Roof Gallery — Community Art Space in Oakville">
     <Header />
 
     <main class="main-container">
-        <!-- 1. Hero Slider -->
         <HeroSlider />
 
-        <!-- 2. Programs & Workshops -->
         <section id="workshops" class="section-block">
             <div class="section-title">
                 <h2>Programs & Art Classes</h2>
@@ -44,10 +42,8 @@ import Exhibitions from '../components/Exhibitions.astro';
             </div>
         </section>
 
-        <!-- 3. Exhibitions Section -->
         <Exhibitions />
 
-        <!-- 4. Exhibit With Us -->
         <section id="exhibit-with-us" class="section-block">
             <div class="section-title">
                 <h2>Exhibit With Us</h2>
@@ -64,7 +60,6 @@ import Exhibitions from '../components/Exhibitions.astro';
             </div>
         </section>
 
-        <!-- 5. About Us Section -->
         <section id="about" class="section-block">
             <div class="section-title">
                 <h2>About Us</h2>
@@ -79,7 +74,6 @@ import Exhibitions from '../components/Exhibitions.astro';
             </div>
         </section>
 
-        <!-- 6. Archives Section -->
         <section id="archives" class="section-block">
             <div class="section-title">
                 <h2>Together Art Archives</h2>
@@ -111,10 +105,10 @@ import Exhibitions from '../components/Exhibitions.astro';
         </section>
     </main>
 
-    <!-- Footer -->
     <footer id="contact" style="padding: 4rem 3rem; background: var(--text-main); color: #ffffff; text-align: center;">
         <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 0.5rem;">Rainbow Roof Gallery · Non-Profit Organization</p>
         <p style="font-size: 0.85rem; opacity: 0.6; margin-bottom: 1.5rem;">364 Sixteen Mile Dr, Oakville, ON · info@rainbowroofgallery.com</p>
-        <p><a href="/admin/index.html" style="font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: underline;">Admin Login</a></p>
+        <!-- 관리자 로그인 링크에 base 적용 -->
+        <p><a href={`${base}/admin/index.html`} style="font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: underline;">Admin Login</a></p>
     </footer>
 </Layout>
