@@ -1,0 +1,50 @@
+---
+import exhibitionsData from '../../content/exhibitions.json';
+const exhibitions = exhibitionsData.items || [];
+---
+
+<section id="exhibitions" class="section-block">
+    <div class="section-title">
+        <h2>Exhibitions</h2>
+        <span>CURRENT & COMMUNITY SHOWCASE</span>
+    </div>
+    <p class="section-desc">Explore professional exchange exhibitions between Canada and Korea, alongside vibrant visual arts showcases created with local residents.</p>
+    
+    <div class="exhibition-container-wrapper">
+        <button class="carousel-btn prev-btn" aria-label="Previous Slide">&#10094;</button>
+        
+        <div class="exhibition-carousel-wrapper">
+            <div class="exhibition-track">
+                {exhibitions.map((item) => (
+                    <div class="exhibition-card">
+                        <img src={item.image} alt={item.title} />
+                        <div class="exhibition-info">
+                            <span>{item.badge}</span>
+                            <h3>{item.title}</h3>
+                            <p>{item.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <button class="carousel-btn next-btn" aria-label="Next Slide">&#10095;</button>
+    </div>
+</section>
+
+<script>
+    // 캐러셀 좌우 스크롤 버튼 제어
+    const carouselWrapper = document.querySelector('.exhibition-carousel-wrapper');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (carouselWrapper && prevBtn && nextBtn) {
+        const scrollAmount = 460;
+        prevBtn.addEventListener('click', () => {
+            carouselWrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+            carouselWrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+</script>

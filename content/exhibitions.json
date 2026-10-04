@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "badge": "2027 New year",
+      "title": "New years and new artiest come",
+      "description": "CMS test",
+      "image": "/img/exhibitions/imgi_2_2026_work2.jpg"
+    },
+    {
+      "badge": "Opening Show",
+      "title": "Peace and Prosperity — Together Show",
+      "description": "Our inaugural community exhibition celebrating harmony and shared artistic values.",
+      "image": "/img/exhibitions/exhib-04.jpg"
+    },
+    {
+      "badge": "2026 Season",
+      "title": "Together Voice of Diversity Show",
+      "description": "A contemporary art exchange exhibition featuring diverse perspectives and cultural expressions.",
+      "image": "/img/exhibitions/exhib-01.jpg"
+    },
+    {
+      "badge": "Special Exhibition",
+      "title": "Dialogue in Time",
+      "description": "An introspective collection bridging historical depth with modern creative interpretations.",
+      "image": "/img/exhibitions/exhib-02.jpg"
+    },
+    {
+      "badge": "2025 Archive",
+      "title": "8 Canadian & 8 Korean Artists",
+      "description": "An in-depth cross-border collaborative exhibition by professional artists from Canada and Korea.",
+      "image": "/img/exhibitions/exhib-03.jpg"
+    }
+  ]
+}

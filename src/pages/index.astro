@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HeroSlider from '../components/HeroSlider.astro';
+import Exhibitions from '../components/Exhibitions.astro';
+---
+// ( Workshops, About, Archives 등 나머지 섹션도 컴포넌트로 분리 가능 )
+---
+
+<Layout title="Rainbow Roof Gallery — Community Art Space in Oakville">
+    <Header />
+
+    <main class="main-container">
+        <!-- 1. Hero Slider -->
+        <HeroSlider />
+
+        <!-- 2. Programs & Workshops -->
+        <section id="workshops" class="section-block">
+            <div class="section-title">
+                <h2>Programs & Art Classes</h2>
+                <span>COMMUNITY LEARNING & REVENUE</span>
+            </div>
+            <p class="section-desc">Discover our regular art classes and professional tutoring sessions designed for everyone, from beginners to aspiring creators.</p>
+            
+            <div class="workshop-banner">
+                <div class="workshop-content">
+                    <span class="badge highlight-badge">2026 REGULAR PROGRAM</span>
+                    <h3>Together Art and Culture<br>Local Artist's Workshop</h3>
+                    <p>Paid tutoring and practical workshops for Oakville residents and creators. A welcoming space to learn, practice, and connect together.</p>
+                    <a href="https://www.rainbowstudio.ca/" target="_blank" rel="noopener noreferrer" class="register-action-btn">Register & Inquire</a>
+                </div>
+                <div class="workshop-features">
+                    <div class="feature-item">
+                        <h4>🎨 Professional Tutoring</h4>
+                        <p>Customized practical guidance from experienced artists</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=364+Sixteen+Mile+Dr,+Oakville,+ON" target="_blank" rel="noopener noreferrer" class="feature-link-item">
+                        <div class="feature-item">
+                            <h4>📍 Location, Rainbow Studio Gallery & Cafe</h4>
+                            <p>364 Sixteen Mile Dr, Oakville, ON</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Exhibitions Section -->
+        <Exhibitions />
+
+        <!-- 4. Exhibit With Us -->
+        <section id="exhibit-with-us" class="section-block">
+            <div class="section-title">
+                <h2>Exhibit With Us</h2>
+                <span>YOUR ART, YOUR GALLERY</span>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Showcase Your Art in Our Gallery</h3>
+                    <p>Rainbow Roof Gallery is more than just a place to view art. Through regular community operations, we provide opportunities for local residents, amateur creators, and youths to share their artistic passions and exhibit their work.</p>
+                    <p>From small sketches to finished pieces, start your exhibition journey right here with us.</p>
+                    <a href="#contact" class="register-action-btn" style="margin-top: 1rem;">Inquire About Space & Participation</a>
+                </div>
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=800&q=80" alt="Community Art Exhibition">
+            </div>
+        </section>
+
+        <!-- 5. About Us Section -->
+        <section id="about" class="section-block">
+            <div class="section-title">
+                <h2>About Us</h2>
+                <span>NON-PROFIT ORGANIZATION</span>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Rainbow Roof Gallery is a non-profit arts organization located in Oakville, Canada, supporting cultural connection and artistic growth within the local community.</p>
+                    <p>Through art classes, workshops, and cross-border artist exchanges, we strive to provide an open space where anyone can enjoy and experience art in their daily lives.</p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80" alt="Gallery Interior">
+            </div>
+        </section>
+
+        <!-- 6. Archives Section -->
+        <section id="archives" class="section-block">
+            <div class="section-title">
+                <h2>Together Art Archives</h2>
+                <span>PAST RECORDS</span>
+            </div>
+            <div class="archive-list">
+                <div class="archive-item">
+                    <div class="year-badge">2026</div>
+                    <div class="archive-detail">
+                        <h4>Together Art and Culture — Local Artist's Workshop & Classes</h4>
+                        <p>Oakville, Ontario</p>
+                    </div>
+                </div>
+                <div class="archive-item">
+                    <div class="year-badge">2025</div>
+                    <div class="archive-detail">
+                        <h4>8 Canadian & 8 Korean Professional Artists Exhibition</h4>
+                        <p>Special Collaborative Show</p>
+                    </div>
+                </div>
+                <div class="archive-item">
+                    <div class="year-badge">2024</div>
+                    <div class="archive-detail">
+                        <h4>Peace and Prosperity — Together Show</h4>
+                        <p>Opening Community Exhibition</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" style="padding: 4rem 3rem; background: var(--text-main); color: #ffffff; text-align: center;">
+        <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 0.5rem;">Rainbow Roof Gallery · Non-Profit Organization</p>
+        <p style="font-size: 0.85rem; opacity: 0.6; margin-bottom: 1.5rem;">364 Sixteen Mile Dr, Oakville, ON · info@rainbowroofgallery.com</p>
+        <p><a href="/admin/index.html" style="font-size: 0.8rem; color: rgba(255,255,255,0.4); text-decoration: underline;">Admin Login</a></p>
+    </footer>
+</Layout>

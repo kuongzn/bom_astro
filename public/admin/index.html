@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Bom Gallery CMS</title>
+  <style>
+    /* 모바일과 PC 환경에서 CMS UI가 화면에 꽉 차도록 설정 */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    #nc-root {
+      min-height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <!-- Decap CMS 루트 영역 -->
+  <div id="nc-root"></div>
+  
+  <!-- Decap CMS 스크립트 로드 (로컬 테스트 전용) -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</body>
+</html>

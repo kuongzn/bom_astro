@@ -1,0 +1,67 @@
+---
+import heroData from '../../content/hero-slides.json';
+const slides = heroData.slides || [];
+---
+
+<section id="home" class="section-block hero-slider" data-slides={JSON.stringify(slides)}>
+    <div class="slider-container">
+        <!-- 첫 번째 슬라이드는 SSR로 즉시 렌더링 (SEO 및 초기 로딩 최적화) -->
+        {slides.length > 0 && (
+            <div class="slide active">
+                <img src={slides[0].img} alt={slides[0].title} />
+            </div>
+        )}
+    </div>
+
+    <div class="hero-bottom-overlay">
+        <div class="caption-wrapper">
+            <div class="caption-info-box">
+                <span class="caption-artist">{slides[0]?.artist || 'Rainbow Roof Gallery · Oakville, ON'}</span>
+                <span class="caption-title">{slides[0]?.title || 'Featured Artwork Showcase'}</span>
+            </div>
+            <div class="hero-cta-group">
+                <a href="#workshops" class="hero-quick-btn">🎨 Art Classes</a>
+                <a href="#exhibitions" class="hero-quick-btn outline">✨ View Exhibitions</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // 클라이언트 측에서 5초마다 슬라이드 순환 및 텍스트 변경
+    const sliderSection = document.querySelector('.hero-slider');
+    if (sliderSection) {
+        const slides = JSON.parse(sliderSection.getAttribute('data-slides') || '[]');
+        const sliderContainer = sliderSection.querySelector('.slider-container');
+        const artistEl = sliderSection.querySelector('.caption-artist');
+        const titleEl = sliderSection.querySelector('.caption-title');
+
+        if (slides.length > 1 && sliderContainer) {
+            let currentIndex = 0;
+
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            const shuffledSlides = shuffleArray([...slides]);
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % shuffledSlides.length;
+                const slideData = shuffledSlides[currentIndex];
+
+                sliderContainer.innerHTML = `
+                    <div class="slide active">
+                        <img src="${slideData.img}" alt="${slideData.title}" />
+                    </div>
+                `;
+
+                if (artistEl) artistEl.textContent = slideData.artist;
+                if (titleEl) titleEl.textContent = slideData.title;
+            }, 5000);
+        }
+    }
+</script>
