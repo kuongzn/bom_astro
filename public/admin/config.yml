@@ -2,7 +2,7 @@ backend:
   name: github
   repo: kuongzn/bom_astro
   branch: main
-  base_url: https://decap-6j3wo9rnw-kuong-ent.vercel.app
+  base_url: https://decap-one.vercel.app
 
 local_backend: true
 
