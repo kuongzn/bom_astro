@@ -29,6 +29,11 @@
       "img": "/img/artworks/art-04.jpg",
       "artist": "Gaesook Yang",
       "title": "Featured Artwork 04"
+    },
+    {
+      "artist": "Clara Kim",
+      "title": "CMS Test title",
+      "img": "/img/artworks/art-07.jpg"
     }
   ]
 }
