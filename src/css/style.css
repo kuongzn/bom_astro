@@ -156,14 +156,14 @@ body {
 .hero-slider {
     position: relative;
     width: 100%;
-    max-width: 1400px;        /* 전체 사이트 컨테이너 최대 폭(1400px)과 일치시켜 MoMA처럼 꽉 찬 듯 정돈된 느낌 부여 */
-    height: 650px;            /* 화면 전체를 덮지 않고 한눈에 들어오는 세련된 갤러리 뷰 높이 */
-    margin: 2rem auto 0;      /* 상단 여백을 주어 헤더와 자연스럽게 분리 */
-    border-radius: 12px;      /* 모던한 미술관 웹사이트처럼 모서리를 부드럽게 라운딩 처리 */
+    max-width: 1400px;
+    height: 480px;            /* 650px에서 480px로 더 낮춰서 한눈에 쏙 들어오게 조정 */
+    margin: 1.5rem auto 0;
+    border-radius: 12px;
     padding: 0 !important;
     overflow: hidden;
     background: var(--bg-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* 은은한 그림자로 고급스러운 입체감 부여 */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
 .slider-container {
