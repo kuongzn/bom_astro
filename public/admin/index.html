@@ -19,9 +19,34 @@
     /* CMS 미리보기 내부 스타일 보정 */
     .cms-preview-container { padding: 20px; font-family: inherit; }
     .cms-preview-container img { max-width: 100%; height: auto; display: block; margin-top: 10px; border-radius: 8px; }
+
+    /* 🏠 홈으로 가기 버튼 스타일 */
+    .home-link-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      background-color: #ffffff;
+      color: #374151;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: 1px solid #d1d5db;
+      transition: background-color 0.2s;
+    }
+    .home-link-btn:hover {
+      background-color: #f9fafb;
+      color: #111827;
+    }
   </style>
 </head>
 <body>
+  <!-- 🏠 로그인 화면 및 CMS 화면 상단에 항상 노출되는 메인 홈 이동 버튼 -->
+  <a href="/bom_astro/" class="home-link-btn">← 메인 웹사이트로</a>
+
   <!-- Decap CMS 루트 영역 -->
   <div id="nc-root"></div>
   
@@ -41,7 +66,6 @@
           h('h2', {}, '메인 히어로 슬라이더 미리보기'),
           slides.map(function(slide, index) {
             var imgPath = slide.get('img') || '';
-            // Vercel CMS 환경에서 이미지를 불러올 수 있도록 깃허브 원본(raw) 주소 혹은 절대 경로로 매핑
             var fullImgUrl = imgPath.startsWith('http') ? imgPath : 'https://raw.githubusercontent.com/kuongzn/bom_astro/main/public' + imgPath;
 
             return h('div', { key: index, style: { marginBottom: '24px', borderBottom: '1px solid #ddd', paddingBottom: '16px' } },
@@ -78,7 +102,7 @@
       }
     });
 
-    // 3. Decap CMS에 커스텀 미리보기 템플릿 등록 (config.yml의 collection 이름과 일치해야 함)
+    // 3. Decap CMS에 커스텀 미리보기 템플릿 등록
     CMS.registerPreviewTemplate('hero_slides', HeroPreview);
     CMS.registerPreviewTemplate('exhibitions', ExhibitionPreview);
   </script>
