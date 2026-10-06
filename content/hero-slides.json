@@ -1,6 +1,11 @@
 {
   "slides": [
     {
+      "artist": "Clara Kim",
+      "title": "CMS Test title",
+      "img": "/img/artworks/art-07.jpg"
+    },
+    {
       "img": "/img/artworks/art-02.jpg",
       "artist": "Bomi Ko",
       "title": "Featured Artwork 02"
@@ -29,11 +34,6 @@
       "img": "/img/artworks/art-04.jpg",
       "artist": "Gaesook Yang",
       "title": "Featured Artwork 04"
-    },
-    {
-      "artist": "Clara Kim",
-      "title": "CMS Test title",
-      "img": "/img/artworks/art-07.jpg"
     }
   ]
 }
